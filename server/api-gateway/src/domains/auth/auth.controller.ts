@@ -1,0 +1,55 @@
+import {
+  Controller,
+  Post,
+  Body,
+  UseGuards,
+  Get,
+  Patch,
+  Delete,
+  Param,
+} from '@nestjs/common';
+import { AuthService } from './auth.service';
+import { LoginDto } from './dto/login.dto';
+import { RegisterDto } from './dto/register.dto';
+import { CreateRoleDto, UpdateRoleDto } from './dto/role.dto';
+import { JwtAuthGuard } from '../../guards/jwt-auth.guard';
+import { RolesGuard } from '../../guards/roles.guard';
+import { Roles } from '../../decorators/roles.decorators';
+import { UserRole } from '../../enums/user-role.enum';
+
+@Controller('auth')
+export class AuthController {
+  constructor(private readonly authService: AuthService) {}
+
+  @Post('login')
+  login(@Body() body: LoginDto) {
+    return this.authService.login(body);
+  }
+
+  @Post('register')
+  register(@Body() body: RegisterDto) {
+    return this.authService.register(body);
+  }
+
+  @UseGuards(JwtAuthGuard, RolesGuard)
+  @Roles(UserRole.ADMIN)
+  @Post('create-role')
+  createRole(@Body() dto: CreateRoleDto) {
+    return this.authService.createRole(dto);
+  }
+
+  @Get('roles')
+  getRoles() {
+    return this.authService.getRoles();
+  }
+
+  @Patch('update-role/:id')
+  updateRole(@Param('id') id: string, @Body() dto: UpdateRoleDto) {
+    return this.authService.updateRole(id, dto);
+  }
+
+  @Delete('delete-role/:id')
+  deleteRole(@Param('id') id: string) {
+    return this.authService.deleteRole(id);
+  }
+}
