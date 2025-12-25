@@ -44,12 +44,12 @@ export class AuthController {
   }
 
   @Patch('update-role/:id')
-  updateRole(@Param('id') id: string, @Body() dto: UpdateRoleDto) {
+  updateRole(@Param('id') id: number, @Body() dto: UpdateRoleDto) {
     return this.authService.updateRole(id, dto);
   }
 
   @Delete('delete-role/:id')
-  deleteRole(@Param('id') id: string) {
+  deleteRole(@Param('id') id: number) {
     return this.authService.deleteRole(id);
   }
 }

@@ -10,45 +10,59 @@ export class AuthService {
   constructor(private readonly http: HttpService) {}
 
   async login(data: LoginDto) {
+    const { email, password } = data;
     const response = await firstValueFrom(
-      this.http.post(`${process.env.AUTH_SERVICE_URL}/auth/login`, data),
+      this.http.post(`${process.env.AUTH_SERVICE_URL}/auth/login`, {
+        email,
+        password,
+      }),
     );
-
     return response.data;
   }
 
   async register(data: RegisterDto) {
+    const { firstName, lastName, phone, email, password } = data;
     const response = await firstValueFrom(
-      this.http.post(`${process.env.AUTH_SERVICE_URL}/auth/register`, data),
+      this.http.post(`${process.env.AUTH_SERVICE_URL}/auth/register`, {
+        firstName,
+        lastName,
+        phone,
+        email,
+        password,
+      }),
     );
-
     return response.data;
   }
 
   async createRole(dto: CreateRoleDto) {
     const res = await firstValueFrom(
-      this.http.post(`${process.env.AUTH_SERVICE_URL}/create-role`, dto),
+      this.http.post(`${process.env.AUTH_SERVICE_URL}/auth/create-role`, dto),
     );
     return res.data;
   }
 
   async getRoles() {
     const res = await firstValueFrom(
-      this.http.get(`${process.env.AUTH_SERVICE_URL}/roles`),
+      this.http.get(`${process.env.AUTH_SERVICE_URL}/auth/roles`),
     );
     return res.data;
   }
 
-  async updateRole(id: string, dto: UpdateRoleDto) {
+  async updateRole(id: number, dto: UpdateRoleDto) {
     const res = await firstValueFrom(
-      this.http.patch(`${process.env.AUTH_SERVICE_URL}/update-role/${id}`, dto),
+      this.http.patch(
+        `${process.env.AUTH_SERVICE_URL}/auth/update-role/${id}`,
+        dto,
+      ),
     );
     return res.data;
   }
 
-  async deleteRole(id: string) {
+  async deleteRole(id: number) {
     const res = await firstValueFrom(
-      this.http.delete(`${process.env.AUTH_SERVICE_URL}/delete-role/${id}`),
+      this.http.delete(
+        `${process.env.AUTH_SERVICE_URL}/auth/delete-role/${id}`,
+      ),
     );
     return res.data;
   }
