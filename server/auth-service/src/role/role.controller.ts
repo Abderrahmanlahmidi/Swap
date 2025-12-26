@@ -2,11 +2,12 @@ import {
   Controller,
   Post,
   Get,
-  Patch,
   Delete,
   Body,
   Param,
   ParseIntPipe,
+  Put,
+  Patch,
 } from '@nestjs/common';
 import { RoleService } from './role.service';
 
