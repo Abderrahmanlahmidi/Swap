@@ -23,10 +23,8 @@ export class AuthController {
     @Body() body: { email: string; password: string },
     @Res({ passthrough: true }) res: Response,
   ) {
-    const { accessToken, refreshToken } = await this.authService.login(
-      body.email,
-      body.password,
-    );
+    const { accessToken, refreshToken, userId, role } =
+      await this.authService.login(body.email, body.password);
 
     res.cookie('refreshToken', refreshToken, {
       httpOnly: true,
@@ -38,8 +36,11 @@ export class AuthController {
     return {
       status: 200,
       message: 'Login successful',
+      user: {
+        id: userId,
+        role,
+      },
       accessToken,
     };
   }
 }
-

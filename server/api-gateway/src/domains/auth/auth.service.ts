@@ -7,7 +7,7 @@ import { CreateRoleDto, UpdateRoleDto } from './dto/role.dto';
 
 @Injectable()
 export class AuthService {
-  constructor(private readonly http: HttpService) {}
+  constructor(private readonly http: HttpService) { }
 
   async login(data: LoginDto) {
     const { email, password } = data;
@@ -36,14 +36,14 @@ export class AuthService {
 
   async createRole(dto: CreateRoleDto) {
     const res = await firstValueFrom(
-      this.http.post(`${process.env.AUTH_SERVICE_URL}/auth/create-role`, dto),
+      this.http.post(`${process.env.AUTH_SERVICE_URL}/roles`, dto),
     );
     return res.data;
   }
 
   async getRoles() {
     const res = await firstValueFrom(
-      this.http.get(`${process.env.AUTH_SERVICE_URL}/auth/roles`),
+      this.http.get(`${process.env.AUTH_SERVICE_URL}/roles`),
     );
     return res.data;
   }
@@ -51,7 +51,7 @@ export class AuthService {
   async updateRole(id: number, dto: UpdateRoleDto) {
     const res = await firstValueFrom(
       this.http.patch(
-        `${process.env.AUTH_SERVICE_URL}/auth/update-role/${id}`,
+        `${process.env.AUTH_SERVICE_URL}/roles/${id}`,
         dto,
       ),
     );
@@ -60,9 +60,7 @@ export class AuthService {
 
   async deleteRole(id: number) {
     const res = await firstValueFrom(
-      this.http.delete(
-        `${process.env.AUTH_SERVICE_URL}/auth/delete-role/${id}`,
-      ),
+      this.http.delete(`${process.env.AUTH_SERVICE_URL}/roles/${id}`),
     );
     return res.data;
   }
