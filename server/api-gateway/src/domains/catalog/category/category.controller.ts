@@ -20,8 +20,8 @@ import { Roles } from '../../../decorators/roles.decorators';
 export class CategoryGatewayController {
   constructor(private readonly categoryService: CategoryGatewayService) {}
 
-  @UseGuards(JwtAuthGuard, RolesGuard)
-  @Roles(UserRole.ADMIN || UserRole.CLIENT)
+  // @UseGuards(JwtAuthGuard, RolesGuard)
+  // @Roles(UserRole.ADMIN || UserRole.CLIENT)
   @Post()
   create(@Body() dto: CreateCategoryDto) {
     return this.categoryService.createCategory(dto);

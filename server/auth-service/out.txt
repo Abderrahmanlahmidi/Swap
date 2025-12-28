@@ -1,0 +1,30 @@
+FAIL src/role/role.debug.spec.ts
+  ● Test suite failed to run
+
+    Cannot find module './internal/class.js' from 'generated/prisma/client.ts'
+
+    Require stack:
+      generated/prisma/client.ts
+      prisma/prisma.service.ts
+      role/role.service.ts
+
+    [0m [90m 16 |[39m [36mimport[39m [33m*[39m [36mas[39m runtime [36mfrom[39m [32m"@prisma/client/runtime/client"[39m
+     [90m 17 |[39m [36mimport[39m [33m*[39m [36mas[39m $Enums [36mfrom[39m [32m"./enums.js"[39m
+    [31m[1m>[22m[39m[90m 18 |[39m [36mimport[39m [33m*[39m [36mas[39m $Class [36mfrom[39m [32m"./internal/class.js"[39m
+     [90m    |[39m [31m[1m^[22m[39m
+     [90m 19 |[39m [36mimport[39m [33m*[39m [36mas[39m [33mPrisma[39m [36mfrom[39m [32m"./internal/prismaNamespace.js"[39m
+     [90m 20 |[39m
+     [90m 21 |[39m [36mexport[39m [33m*[39m [36mas[39m $Enums [36mfrom[39m [32m'./enums.js'[39m[0m
+
+      at Resolver._throwModNotFoundError (../node_modules/jest-resolve/build/index.js:863:11)
+      at Object.<anonymous> (generated/prisma/client.ts:18:1)
+      at Object.<anonymous> (prisma/prisma.service.ts:3:1)
+      at Object.<anonymous> (role/role.service.ts:6:1)
+      at Object.<anonymous> (role/role.controller.ts:11:1)
+      at Object.<anonymous> (role/role.debug.spec.ts:2:1)
+
+Test Suites: 1 failed, 1 total
+Tests:       0 total
+Snapshots:   0 total
+Time:        5.945 s
+Ran all test suites matching src/role/role.debug.spec.ts.
