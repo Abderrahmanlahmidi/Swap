@@ -7,7 +7,7 @@ import { CreateRoleDto, UpdateRoleDto } from './dto/role.dto';
 
 @Injectable()
 export class AuthService {
-  constructor(private readonly http: HttpService) { }
+  constructor(private readonly http: HttpService) {}
 
   async login(data: LoginDto) {
     const { email, password } = data;
@@ -50,10 +50,7 @@ export class AuthService {
 
   async updateRole(id: number, dto: UpdateRoleDto) {
     const res = await firstValueFrom(
-      this.http.patch(
-        `${process.env.AUTH_SERVICE_URL}/roles/${id}`,
-        dto,
-      ),
+      this.http.patch(`${process.env.AUTH_SERVICE_URL}/roles/${id}`, dto),
     );
     return res.data;
   }

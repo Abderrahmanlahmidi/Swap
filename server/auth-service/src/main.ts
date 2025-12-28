@@ -8,5 +8,6 @@ async function bootstrap() {
   // eslint-disable-next-line @typescript-eslint/no-unsafe-call
   app.use(cookieParser());
   await app.listen(process.env.PORT ?? 3001);
+  console.log(`Auth service is running on: ${await app.getUrl()}`);
 }
 bootstrap();

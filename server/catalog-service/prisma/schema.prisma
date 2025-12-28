@@ -1,0 +1,37 @@
+datasource db {
+  provider = "postgresql"
+}
+
+generator client {
+  provider     = "prisma-client"
+  output       = "../src/generated/prisma"
+  moduleFormat = "cjs"
+}
+
+model Category {
+  id          String    @id @default(uuid())
+  name        String    @unique
+  description String?
+  products    Product[]
+}
+
+model Product {
+  id          String     @id @default(uuid())
+  name        String
+  description String?
+  price       Float
+  isActive    Boolean    @default(true)
+  adminId     Int       
+  categoryId  String
+  category    Category   @relation(fields: [categoryId], references: [id])
+  inventory   Inventory?
+}
+
+model Inventory {
+  id             String  @id @default(uuid())
+  totalStock     Int
+  availableStock Int
+  reservedStock  Int     @default(0)
+  productId      String  @unique
+  product        Product @relation(fields: [productId], references: [id])
+}

@@ -6,7 +6,6 @@ import {
   Body,
   Param,
   ParseIntPipe,
-  Put,
   Patch,
 } from '@nestjs/common';
 import { RoleService } from './role.service';
