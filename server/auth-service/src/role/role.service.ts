@@ -1,96 +1,86 @@
-import {
-    Injectable,
-    NotFoundException,
-    BadRequestException,
-} from '@nestjs/common';
+import { Injectable, NotFoundException, BadRequestException } from '@nestjs/common';
 import { PrismaService } from '../prisma/prisma.service';
 
 @Injectable()
 export class RoleService {
-    constructor(private prisma: PrismaService) { }
+  constructor(private prisma: PrismaService) {}
 
-    async create(body: any) {
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-        const { name, description } = body;
+  async create(body: any) {
+    const { name, description } = body;
 
-        if (!name) {
-            throw new BadRequestException('Role name is required');
-        }
-
-        const exists = await this.prisma.role.findUnique({
-            // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-            where: { name },
-        });
-
-        if (exists) {
-            throw new BadRequestException('Role already exists');
-        }
-
-        const role = await this.prisma.role.create({
-            data: {
-                // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-                name,
-                // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-                description,
-            },
-        });
-
-        return {
-            status: 201,
-            message: 'Role created successfully',
-            data: role,
-        };
+    if (!name) {
+      throw new BadRequestException('Role name is required');
     }
 
-    async findAll() {
-        return this.prisma.role.findMany({
-            orderBy: { createdAt: 'desc' },
-        });
+    const exists = await this.prisma.role.findUnique({
+      where: { name },
+    });
+
+    if (exists) {
+      throw new BadRequestException('Role already exists');
     }
 
-    async findOne(id: number) {
-        const role = await this.prisma.role.findUnique({
-            where: { id },
-        });
+    const role = await this.prisma.role.create({
+      data: {
+        name,
+        description: description || null,
+      },
+    });
 
-        if (!role) {
-            throw new NotFoundException('Role not found');
-        }
+    return {
+      status: 201,
+      message: 'Role created successfully',
+      data: role,
+    };
+  }
 
-        return role;
+  async findAll() {
+    return this.prisma.role.findMany({
+      orderBy: { createdAt: 'desc' },
+    });
+  }
+
+  async findOne(roleId: string) {
+    const role = await this.prisma.role.findUnique({
+      where: { id: roleId },
+    });
+
+    if (!role) {
+      throw new NotFoundException('Role not found');
     }
 
-    async update(id: number, body: any) {
-        await this.findOne(id);
+    return role;
+  }
 
-        const role = await this.prisma.role.update({
-            where: { id },
-            data: {
-                // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-member-access
-                name: body.name,
-                // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-member-access
-                description: body.description,
-            },
-        });
+  async update(roleId: string, body: any) {
+    await this.findOne(roleId);
 
-        return {
-            status: 200,
-            message: 'Role updated successfully',
-            data: role,
-        };
-    }
+    const role = await this.prisma.role.update({
+      where: { id: roleId },
+      data: {
+        name: body.name,
+        description: body.description || null,
+      },
+    });
 
-    async delete(id: number) {
-        await this.findOne(id);
+    return {
+      status: 200,
+      message: 'Role updated successfully',
+      data: role,
+    };
+  }
 
-        const role = await this.prisma.role.delete({
-            where: { id },
-        });
+  async delete(roleId: string) {
+    await this.findOne(roleId);
 
-        return {
-            status: 200,
-            message: 'Role deleted successfully',
-            data: role,
-        };
-    }
+    const role = await this.prisma.role.delete({
+      where: { id: roleId },
+    });
+
+    return {
+      status: 200,
+      message: 'Role deleted successfully',
+      data: role,
+    };
+  }
 }
