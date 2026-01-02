@@ -1,20 +1,26 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, Inject, OnModuleInit } from '@nestjs/common';
 import { HttpService } from '@nestjs/axios';
+import { ClientKafka } from '@nestjs/microservices';
 import { firstValueFrom } from 'rxjs';
 import { UpdateInventoryDto } from './dto/update-inventory.dto';
 import { CreateInventoryDto } from './dto/create-inventory.dto';
 
 @Injectable()
-export class InventoryGatewayService {
-  constructor(private readonly http: HttpService) {}
+export class InventoryGatewayService implements OnModuleInit {
+  constructor(
+    private readonly http: HttpService,
+    @Inject('KAFKA_SERVICE') private readonly kafkaClient: ClientKafka,
+  ) { }
+
+  async onModuleInit() {
+    await this.kafkaClient.connect();
+  }
 
   private baseUrl = process.env.CATALOG_SERVICE_URL;
 
   async createInventory(dto: CreateInventoryDto) {
-    const res = await firstValueFrom(
-      this.http.post(`${this.baseUrl}/inventories`, dto),
-    );
-    return res.data;
+    this.kafkaClient.emit('inventory.created', dto);
+    return { message: 'Inventory creation event emitted' };
   }
 
   async getInventories() {
@@ -32,16 +38,12 @@ export class InventoryGatewayService {
   }
 
   async updateInventory(id: string, dto: UpdateInventoryDto) {
-    const res = await firstValueFrom(
-      this.http.patch(`${this.baseUrl}/inventories/${id}`, dto),
-    );
-    return res.data;
+    this.kafkaClient.emit('inventory.updated', { id, ...dto });
+    return { message: 'Inventory update event emitted' };
   }
 
   async deleteInventory(id: string) {
-    const res = await firstValueFrom(
-      this.http.delete(`${this.baseUrl}/inventories/${id}`),
-    );
-    return res.data;
+    this.kafkaClient.emit('inventory.deleted', { id });
+    return { message: 'Inventory deletion event emitted' };
   }
 }

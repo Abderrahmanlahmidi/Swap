@@ -1,40 +1,57 @@
 import {
-    Controller,
-    Get,
-    Post,
-    Body,
-    Patch,
-    Param,
-    Delete,
+  Controller,
+  Get,
+  Post,
+  Body,
+  Patch,
+  Param,
+  Delete,
 } from '@nestjs/common';
+import { EventPattern, Payload } from '@nestjs/microservices';
 import { CategoryService } from './category.service';
 
 @Controller('categories')
 export class CategoryController {
-    constructor(private readonly categoryService: CategoryService) { }
+  constructor(private readonly categoryService: CategoryService) { }
 
-    @Post()
-    create(@Body() body: any) {
-        return this.categoryService.create(body);
-    }
+  @EventPattern('category.created')
+  handleCategoryCreated(@Payload() data: any) {
+    return this.categoryService.create(data);
+  }
 
-    @Get()
-    findAll() {
-        return this.categoryService.findAll();
-    }
+  @EventPattern('category.updated')
+  handleCategoryUpdated(@Payload() data: any) {
+    const { id, ...dto } = data;
+    return this.categoryService.update(id, dto);
+  }
 
-    @Get(':id')
-    findOne(@Param('id') id: string) {
-        return this.categoryService.findOne(id);
-    }
+  @EventPattern('category.deleted')
+  handleCategoryDeleted(@Payload() data: any) {
+    return this.categoryService.remove(data.id);
+  }
 
-    @Patch(':id')
-    update(@Param('id') id: string, @Body() body: any) {
-        return this.categoryService.update(id, body);
-    }
+  @Post()
+  create(@Body() body: any) {
+    return this.categoryService.create(body);
+  }
 
-    @Delete(':id')
-    remove(@Param('id') id: string) {
-        return this.categoryService.remove(id);
-    }
+  @Get()
+  findAll() {
+    return this.categoryService.findAll();
+  }
+
+  @Get(':id')
+  findOne(@Param('id') id: string) {
+    return this.categoryService.findOne(id);
+  }
+
+  @Patch(':id')
+  update(@Param('id') id: string, @Body() body: any) {
+    return this.categoryService.update(id, body);
+  }
+
+  @Delete(':id')
+  remove(@Param('id') id: string) {
+    return this.categoryService.remove(id);
+  }
 }

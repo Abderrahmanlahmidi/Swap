@@ -5,113 +5,39 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4b466510-e57d-4e0f-9ce7-eddab30fe38f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/1bdbcf20-604f-4fb7-8add-f5d25add75b4.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/1bdbcf20-604f-4fb7-8add-f5d25add75b4/storage_v2/_src_/database/auth_db.ddJ22Q.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/1bdbcf20-604f-4fb7-8add-f5d25add75b4/storage_v2/_src_/database/auth_db.ddJ22Q/schema/information_schema.FNRwLQ.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/1bdbcf20-604f-4fb7-8add-f5d25add75b4/storage_v2/_src_/database/auth_db.ddJ22Q/schema/pg_catalog.0S1ZNQ.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/1bdbcf20-604f-4fb7-8add-f5d25add75b4/storage_v2/_src_/database/postgres.edMnLQ.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/1bdbcf20-604f-4fb7-8add-f5d25add75b4/storage_v2/_src_/database/postgres.edMnLQ/schema/information_schema.FNRwLQ.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/1bdbcf20-604f-4fb7-8add-f5d25add75b4/storage_v2/_src_/database/postgres.edMnLQ/schema/pg_catalog.0S1ZNQ.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/1bdbcf20-604f-4fb7-8add-f5d25add75b4/storage_v2/_src_/database/postgres.edMnLQ/schema/public.abK9xQ.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/1bdbcf20-604f-4fb7-8add-f5d25add75b4/storage_v2/_src_/database/swap_catalog.bdWPxg.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/1bdbcf20-604f-4fb7-8add-f5d25add75b4/storage_v2/_src_/database/swap_catalog.bdWPxg/schema/information_schema.FNRwLQ.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/1bdbcf20-604f-4fb7-8add-f5d25add75b4/storage_v2/_src_/database/swap_catalog.bdWPxg/schema/pg_catalog.0S1ZNQ.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/1bdbcf20-604f-4fb7-8add-f5d25add75b4/storage_v2/_src_/database/swap_catalog.bdWPxg/schema/public.abK9xQ.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/1bdbcf20-604f-4fb7-8add-f5d25add75b4/storage_v2/_src_/database/swap_order.okFH0g.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/1bdbcf20-604f-4fb7-8add-f5d25add75b4/storage_v2/_src_/database/swap_order.okFH0g/schema/information_schema.FNRwLQ.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/1bdbcf20-604f-4fb7-8add-f5d25add75b4/storage_v2/_src_/database/swap_order.okFH0g/schema/pg_catalog.0S1ZNQ.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/auth-service/out.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/auth-service/src/role/role.controller.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/catalog-service/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/catalog-service/.prettierrc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/catalog-service/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/catalog-service/eslint.config.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/catalog-service/nest-cli.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/catalog-service/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/catalog-service/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/catalog-service/prisma.config.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/catalog-service/prisma/schema.prisma" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/catalog-service/src/app.controller.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/catalog-service/src/app.controller.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/catalog-service/src/app.module.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/catalog-service/src/app.service.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/catalog-service/src/category/category.controller.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/catalog-service/src/category/category.controller.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/catalog-service/src/category/category.module.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/catalog-service/src/category/category.service.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/catalog-service/src/inventory/inventory.controller.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/catalog-service/src/inventory/inventory.controller.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/catalog-service/src/inventory/inventory.module.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/catalog-service/src/inventory/inventory.service.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/catalog-service/src/main.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/catalog-service/src/prisma/prisma.module.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/catalog-service/src/prisma/prisma.service.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/catalog-service/src/product/product.controller.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/catalog-service/src/product/product.controller.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/catalog-service/src/product/product.module.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/catalog-service/src/product/product.service.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/catalog-service/test/app.e2e-spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/catalog-service/test/jest-e2e.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/catalog-service/tsconfig.build.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/catalog-service/tsconfig.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order-service/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order-service/.prettierrc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order-service/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order-service/eslint.config.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order-service/nest-cli.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order-service/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order-service/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order-service/prisma.config.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order-service/prisma/schema.prisma" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order-service/src/app.controller.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order-service/src/app.controller.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order-service/src/app.module.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order-service/src/app.service.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order-service/src/main.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order-service/src/order-item/order-item.controller.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order-service/src/order-item/order-item.controller.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order-service/src/order-item/order-item.module.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order-service/src/order-item/order-item.service.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order-service/src/order/order.controller.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order-service/src/order/order.controller.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order-service/src/order/order.module.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order-service/src/order/order.service.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order-service/src/payment/payment.controller.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order-service/src/payment/payment.controller.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order-service/src/payment/payment.module.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order-service/src/payment/payment.service.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order-service/src/prisma/prisma.module.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order-service/src/prisma/prisma.service.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order-service/test/app.e2e-spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order-service/test/jest-e2e.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order-service/tsconfig.build.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order-service/tsconfig.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/data_source_mapping.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/server.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api-gateway/src/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-gateway/src/domains/auth/auth.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/domains/auth/auth.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-gateway/src/domains/catalog/category/category.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/domains/catalog/category/category.controller.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-gateway/src/domains/catalog/category/category.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/domains/catalog/category/category.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-gateway/src/domains/catalog/inventory/inventory.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/domains/catalog/inventory/inventory.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-gateway/src/domains/catalog/product/product.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/domains/catalog/product/product.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-gateway/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/main.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth-service/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth-service/src/auth/auth.controller.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/auth/auth.controller.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth-service/src/auth/auth.service.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/auth/auth.service.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth-service/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth-service/src/role/role.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/role/role.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/src/domains/catalog/category/category.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/domains/catalog/category/category.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/src/domains/catalog/inventory/inventory.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/domains/catalog/inventory/inventory.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/src/domains/catalog/product/product.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/domains/catalog/product/product.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/src/domains/order/order-item/order-item.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/domains/order/order-item/order-item.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/src/domains/order/order/order.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/domains/order/order/order.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/src/domains/order/payment/payment.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/domains/order/payment/payment.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/catalog-service/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/catalog-service/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/catalog-service/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/catalog-service/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/catalog-service/src/category/category.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/catalog-service/src/category/category.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/catalog-service/src/inventory/inventory.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/catalog-service/src/inventory/inventory.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/catalog-service/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/catalog-service/src/main.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/catalog-service/src/product/product.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/catalog-service/src/product/product.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-service/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-service/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-service/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/src/main.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-service/src/order-item/order-item.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/src/order-item/order-item.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-service/src/order/order.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/src/order/order.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-service/src/payment/payment.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/src/payment/payment.controller.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="TypeScript File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -140,31 +66,33 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "Node.js.auth.service.ts.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "git-widget-placeholder": "SWAP-6-as-a-new-customer-i-want-to-create-a-secure-account-with-a-hashed-…rders",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "prettierjs.PrettierConfiguration.Package": "C:\\Users\\Youcode\\Desktop\\Swap\\server\\auth-service\\node_modules\\prettier",
-    "ts.external.directory.path": "C:\\Users\\Youcode\\Desktop\\Swap\\server\\auth-service\\node_modules\\typescript\\lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_MARK_IGNORED_FILES_AS_EXCLUDED&quot;: &quot;true&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;Node.js.auth.service.ts.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;services&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;C:\\Users\\Youcode\\Desktop\\Swap\\server\\auth-service\\node_modules\\prettier&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\Youcode\\Desktop\\Swap\\server\\auth-service\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "postgresql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Youcode\Desktop\Swap\server\api-gateway\src\domains\auth" />
       <recent name="C:\Users\Youcode\Desktop\Swap\server\auth-service\src\prisma" />
     </key>
   </component>
@@ -183,7 +111,10 @@
       <option name="presentableId" value="Default" />
       <updated>1766648251263</updated>
       <workItem from="1766648253457" duration="47221000" />
-      <workItem from="1766930799856" duration="2643000" />
+      <workItem from="1766930799856" duration="4097000" />
+      <workItem from="1766993227687" duration="10683000" />
+      <workItem from="1767081427203" duration="15419000" />
+      <workItem from="1767254615392" duration="25046000" />
     </task>
     <servers />
   </component>

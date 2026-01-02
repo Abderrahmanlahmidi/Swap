@@ -1,42 +1,49 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, Inject, OnModuleInit } from '@nestjs/common';
 import { HttpService } from '@nestjs/axios';
+import { ClientKafka } from '@nestjs/microservices';
 import { firstValueFrom } from 'rxjs';
 import { CreateCategoryDto } from './dto/create-category.dto';
 import { UpdateCategoryDto } from './dto/update-category.dto';
 
 @Injectable()
-export class CategoryGatewayService {
-  constructor(private readonly http: HttpService) {}
+export class CategoryGatewayService implements OnModuleInit {
+  constructor(
+    private readonly http: HttpService,
+    @Inject('KAFKA_SERVICE') private readonly kafkaClient: ClientKafka,
+  ) {}
+
+  async onModuleInit() {
+    await this.kafkaClient.connect();
+  }
 
   private baseUrl = process.env.CATALOG_SERVICE_URL;
 
-  async createCategory(dto: CreateCategoryDto) {
-    return firstValueFrom(
-      this.http.post(`${this.baseUrl}/categories`, dto),
-    ).then((res) => res.data);
+  createCategory(dto: CreateCategoryDto) {
+    this.kafkaClient.emit('category.created', dto);
+    return { message: 'Category creation event emitted' };
   }
 
   async getCategories() {
-    return firstValueFrom(this.http.get(`${this.baseUrl}/categories`)).then(
-      (res) => res.data,
+    const res = await firstValueFrom(
+      this.http.get(`${this.baseUrl}/categories`),
     );
+    return res.data;
   }
 
   async getCategory(id: string) {
-    return firstValueFrom(
+    const res = await firstValueFrom(
       this.http.get(`${this.baseUrl}/categories/${id}`),
-    ).then((res) => res.data);
+    );
+    return res.data;
   }
 
-  async updateCategory(id: string, dto: UpdateCategoryDto) {
-    return firstValueFrom(
-      this.http.patch(`${this.baseUrl}/categories/${id}`, dto),
-    ).then((res) => res.data);
+  updateCategory(id: string, dto: UpdateCategoryDto) {
+    this.kafkaClient.emit('category.updated', { id, ...dto });
+    return { message: 'Category update event emitted' };
   }
 
-  async deleteCategory(id: string) {
-    return firstValueFrom(
-      this.http.delete(`${this.baseUrl}/categories/${id}`),
-    ).then((res) => res.data);
+  deleteCategory(id: string) {
+    this.kafkaClient.emit('category.deleted', { id });
+    return { message: 'Category deletion event emitted' };
   }
 }

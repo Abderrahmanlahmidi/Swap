@@ -86,11 +86,11 @@ export class AuthService {
 
     const accessToken = this.jwtService.sign(
       {
-        sub: user.id,
+        id: user.id,
         email: user.email,
         role: user.role.name,
       },
-      { expiresIn: '15m' },
+      { expiresIn: '1d' },
     );
 
     const refreshToken = this.jwtService.sign(

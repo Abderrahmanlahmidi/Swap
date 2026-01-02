@@ -9,6 +9,8 @@ import { ProductModule } from './domains/catalog/product/product.module';
 import { OrderModule } from './domains/order/order/order.module';
 import { OrderItemModule } from './domains/order/order-item/order-item.module';
 import { PaymentModule } from './domains/order/payment/payment.module';
+import { JwtStrategy } from './domains/auth/jwt.strategy';
+import { KafkaModule } from './kafka/kafka.module';
 
 @Module({
   imports: [
@@ -20,8 +22,9 @@ import { PaymentModule } from './domains/order/payment/payment.module';
     OrderModule,
     OrderItemModule,
     PaymentModule,
+    KafkaModule,
   ],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [AppService, JwtStrategy],
 })
-export class AppModule {}
+export class AppModule { }

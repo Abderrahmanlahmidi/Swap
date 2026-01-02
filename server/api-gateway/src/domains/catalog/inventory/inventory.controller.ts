@@ -18,10 +18,10 @@ import { UserRole } from '../../../enums/user-role.enum';
 
 @Controller('inventories')
 export class InventoryGatewayController {
-  constructor(private readonly inventoryService: InventoryGatewayService) {}
+  constructor(private readonly inventoryService: InventoryGatewayService) { }
 
   @UseGuards(JwtAuthGuard, RolesGuard)
-  @Roles(UserRole.ADMIN || UserRole.CLIENT)
+  @Roles(UserRole.ADMIN, UserRole.CLIENT)
   @Post()
   create(@Body() dto: CreateInventoryDto) {
     return this.inventoryService.createInventory(dto);

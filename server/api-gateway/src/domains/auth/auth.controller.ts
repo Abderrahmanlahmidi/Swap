@@ -31,8 +31,8 @@ export class AuthController {
     return this.authService.register(body);
   }
 
-  // @UseGuards(JwtAuthGuard, RolesGuard)
-  // @Roles(UserRole.ADMIN)
+  @UseGuards(JwtAuthGuard, RolesGuard)
+  @Roles(UserRole.ADMIN)
   @Post('roles')
   createRole(@Body() dto: CreateRoleDto) {
     return this.authService.createRole(dto);

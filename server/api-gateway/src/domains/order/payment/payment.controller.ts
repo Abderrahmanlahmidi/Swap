@@ -18,10 +18,10 @@ import { UserRole } from '../../../enums/user-role.enum';
 
 @Controller('payments')
 export class PaymentGatewayController {
-  constructor(private readonly paymentService: PaymentGatewayService) {}
+  constructor(private readonly paymentService: PaymentGatewayService) { }
 
   @UseGuards(JwtAuthGuard, RolesGuard)
-  @Roles(UserRole.ADMIN || UserRole.CLIENT)
+  @Roles(UserRole.ADMIN, UserRole.CLIENT)
   @Post()
   create(@Body() dto: CreatePaymentDto) {
     return this.paymentService.createPayment(dto);

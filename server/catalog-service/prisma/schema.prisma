@@ -21,7 +21,7 @@ model Product {
   description String?
   price       Float
   isActive    Boolean    @default(true)
-  adminId     Int       
+  adminId     String
   categoryId  String
   category    Category   @relation(fields: [categoryId], references: [id])
   inventory   Inventory?
