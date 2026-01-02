@@ -7,11 +7,28 @@ import {
     Param,
     Delete,
 } from '@nestjs/common';
+import { EventPattern, Payload } from '@nestjs/microservices';
 import { PaymentService } from './payment.service';
 
 @Controller('payments')
 export class PaymentController {
     constructor(private readonly paymentService: PaymentService) { }
+
+    @EventPattern('payment.created')
+    handlePaymentCreated(@Payload() data: any) {
+        return this.paymentService.create(data);
+    }
+
+    @EventPattern('payment.updated')
+    handlePaymentUpdated(@Payload() data: any) {
+        const { id, ...dto } = data;
+        return this.paymentService.update(id, dto);
+    }
+
+    @EventPattern('payment.deleted')
+    handlePaymentDeleted(@Payload() data: any) {
+        return this.paymentService.remove(data.id);
+    }
 
     @Post()
     create(@Body() body: any) {

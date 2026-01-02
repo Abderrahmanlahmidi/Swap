@@ -1,20 +1,26 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, Inject, OnModuleInit } from '@nestjs/common';
 import { HttpService } from '@nestjs/axios';
+import { ClientKafka } from '@nestjs/microservices';
 import { firstValueFrom } from 'rxjs';
 import { CreateOrderItemDto } from './dto/create-order-item.dto';
 import { UpdateOrderItemDto } from './dto/update-order-item.dto';
 
 @Injectable()
-export class OrderItemGatewayService {
-  constructor(private readonly http: HttpService) {}
+export class OrderItemGatewayService implements OnModuleInit {
+  constructor(
+    private readonly http: HttpService,
+    @Inject('KAFKA_SERVICE') private readonly kafkaClient: ClientKafka,
+  ) { }
+
+  async onModuleInit() {
+    await this.kafkaClient.connect();
+  }
 
   private baseUrl = process.env.ORDER_SERVICE_URL;
 
   async createOrderItem(dto: CreateOrderItemDto) {
-    const res = await firstValueFrom(
-      this.http.post(`${this.baseUrl}/order-items`, dto),
-    );
-    return res.data;
+    this.kafkaClient.emit('orderItem.created', dto);
+    return { message: 'Order item creation event emitted' };
   }
 
   async getOrderItemsByOrder(orderId: string) {
@@ -25,16 +31,12 @@ export class OrderItemGatewayService {
   }
 
   async updateOrderItem(id: string, dto: UpdateOrderItemDto) {
-    const res = await firstValueFrom(
-      this.http.patch(`${this.baseUrl}/order-items/${id}`, dto),
-    );
-    return res.data;
+    this.kafkaClient.emit('orderItem.updated', { id, ...dto });
+    return { message: 'Order item update event emitted' };
   }
 
   async deleteOrderItem(id: string) {
-    const res = await firstValueFrom(
-      this.http.delete(`${this.baseUrl}/order-items/${id}`),
-    );
-    return res.data;
+    this.kafkaClient.emit('orderItem.deleted', { id });
+    return { message: 'Order item deletion event emitted' };
   }
 }

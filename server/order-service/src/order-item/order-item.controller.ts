@@ -7,11 +7,28 @@ import {
     Param,
     Delete,
 } from '@nestjs/common';
+import { EventPattern, Payload } from '@nestjs/microservices';
 import { OrderItemService } from './order-item.service';
 
 @Controller('order-items')
 export class OrderItemController {
     constructor(private readonly orderItemService: OrderItemService) { }
+
+    @EventPattern('orderItem.created')
+    handleOrderItemCreated(@Payload() data: any) {
+        return this.orderItemService.create(data);
+    }
+
+    @EventPattern('orderItem.updated')
+    handleOrderItemUpdated(@Payload() data: any) {
+        const { id, ...dto } = data;
+        return this.orderItemService.update(id, dto);
+    }
+
+    @EventPattern('orderItem.deleted')
+    handleOrderItemDeleted(@Payload() data: any) {
+        return this.orderItemService.remove(data.id);
+    }
 
     @Post()
     create(@Body() body: any) {

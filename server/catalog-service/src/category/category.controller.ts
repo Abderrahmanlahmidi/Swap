@@ -7,11 +7,28 @@ import {
   Param,
   Delete,
 } from '@nestjs/common';
+import { EventPattern, Payload } from '@nestjs/microservices';
 import { CategoryService } from './category.service';
 
 @Controller('categories')
 export class CategoryController {
-  constructor(private readonly categoryService: CategoryService) {}
+  constructor(private readonly categoryService: CategoryService) { }
+
+  @EventPattern('category.created')
+  handleCategoryCreated(@Payload() data: any) {
+    return this.categoryService.create(data);
+  }
+
+  @EventPattern('category.updated')
+  handleCategoryUpdated(@Payload() data: any) {
+    const { id, ...dto } = data;
+    return this.categoryService.update(id, dto);
+  }
+
+  @EventPattern('category.deleted')
+  handleCategoryDeleted(@Payload() data: any) {
+    return this.categoryService.remove(data.id);
+  }
 
   @Post()
   create(@Body() body: any) {
