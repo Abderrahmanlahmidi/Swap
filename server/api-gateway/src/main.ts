@@ -16,4 +16,4 @@ async function bootstrap() {
   console.log(`API Gateway is running on: ${await app.getUrl()}`);
 }
 
-bootstrap();
+bootstrap()
