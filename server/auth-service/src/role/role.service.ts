@@ -1,15 +1,16 @@
 import { Injectable, NotFoundException, BadRequestException } from '@nestjs/common';
 import { PrismaService } from '../prisma/prisma.service';
+import { ROLE_MESSAGES } from './constants/role.constants';
 
 @Injectable()
 export class RoleService {
-  constructor(private prisma: PrismaService) {}
+  constructor(private prisma: PrismaService) { }
 
   async create(body: any) {
     const { name, description } = body;
 
     if (!name) {
-      throw new BadRequestException('Role name is required');
+      throw new BadRequestException(ROLE_MESSAGES.ROLE_NAME_REQUIRED);
     }
 
     const exists = await this.prisma.role.findUnique({
@@ -17,7 +18,7 @@ export class RoleService {
     });
 
     if (exists) {
-      throw new BadRequestException('Role already exists');
+      throw new BadRequestException(ROLE_MESSAGES.ROLE_ALREADY_EXISTS);
     }
 
     const role = await this.prisma.role.create({
@@ -29,7 +30,7 @@ export class RoleService {
 
     return {
       status: 201,
-      message: 'Role created successfully',
+      message: ROLE_MESSAGES.ROLE_CREATED,
       data: role,
     };
   }
@@ -46,7 +47,7 @@ export class RoleService {
     });
 
     if (!role) {
-      throw new NotFoundException('Role not found');
+      throw new NotFoundException(ROLE_MESSAGES.ROLE_NOT_FOUND);
     }
 
     return role;
@@ -65,7 +66,7 @@ export class RoleService {
 
     return {
       status: 200,
-      message: 'Role updated successfully',
+      message: ROLE_MESSAGES.ROLE_UPDATED,
       data: role,
     };
   }
@@ -79,7 +80,7 @@ export class RoleService {
 
     return {
       status: 200,
-      message: 'Role deleted successfully',
+      message: ROLE_MESSAGES.ROLE_DELETED,
       data: role,
     };
   }

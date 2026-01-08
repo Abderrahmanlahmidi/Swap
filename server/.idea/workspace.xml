@@ -5,27 +5,41 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4b466510-e57d-4e0f-9ce7-eddab30fe38f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/api-gateway/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-gateway/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/payment-service/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/payment-service/.prettierrc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/payment-service/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/payment-service/eslint.config.mjs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/payment-service/nest-cli.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/payment-service/prisma.config.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/payment-service/prisma/migrations/20260105151233_init/migration.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/payment-service/prisma/migrations/migration_lock.toml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/payment-service/src/app.controller.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/payment-service/src/app.controller.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/payment-service/src/app.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/payment-service/test/app.e2e-spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/payment-service/test/jest-e2e.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/payment-service/tsconfig.build.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/payment-service/tsconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api-gateway/src/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-gateway/src/domains/catalog/category/category.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/domains/catalog/category/category.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-gateway/src/domains/catalog/inventory/inventory.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/domains/catalog/inventory/inventory.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/src/domains/auth/auth.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/domains/auth/auth.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api-gateway/src/domains/catalog/product/product.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/domains/catalog/product/product.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-gateway/src/domains/order/order-item/order-item.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/domains/order/order-item/order-item.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-gateway/src/domains/order/order/order.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/domains/order/order/order.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-gateway/src/domains/order/payment/payment.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/domains/order/payment/payment.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/catalog-service/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/catalog-service/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/catalog-service/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/catalog-service/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/catalog-service/src/category/category.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/catalog-service/src/category/category.controller.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/catalog-service/src/inventory/inventory.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/catalog-service/src/inventory/inventory.controller.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/catalog-service/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/catalog-service/src/main.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/catalog-service/src/product/product.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/catalog-service/src/product/product.controller.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order-service/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order-service/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order-service/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/src/main.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order-service/src/order-item/order-item.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/src/order-item/order-item.controller.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order-service/src/order/order.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/src/order/order.controller.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order-service/src/payment/payment.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/src/payment/payment.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/src/domains/payment/dto/create-payment.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/domains/payment/dto/create-payment.dto.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/src/domains/payment/payment.controller.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/domains/payment/payment.controller.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/src/domains/payment/payment.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/domains/payment/payment.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/src/domains/payment/payment.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/domains/payment/payment.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/src/domains/payment/payment.service.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/domains/payment/payment.service.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/src/domains/payment/payment.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/domains/payment/payment.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-service/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-service/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-service/src/auth/auth.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/auth/auth.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-service/src/role/role.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/role/role.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/catalog-service/src/category/category.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/catalog-service/src/category/category.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/catalog-service/src/inventory/inventory.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/catalog-service/src/inventory/inventory.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/catalog-service/src/product/product.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/catalog-service/src/product/product.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-service/src/order-item/order-item.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/src/order-item/order-item.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-service/src/order/order.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/src/order/order.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/payment-service/src/payment/payment.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/payment-service/src/payment/payment.service.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,7 +54,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/payment-service" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
@@ -54,6 +68,9 @@
     &quot;accountId&quot;: &quot;c396f7d8-a381-4085-b4cb-b4f872fe0cc4&quot;
   }
 }</component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 8
@@ -69,6 +86,7 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;ASKED_MARK_IGNORED_FILES_AS_EXCLUDED&quot;: &quot;true&quot;,
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
     &quot;Node.js.auth.service.ts.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
@@ -92,6 +110,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Youcode\Desktop\Swap\server\api-gateway\src\domains" />
       <recent name="C:\Users\Youcode\Desktop\Swap\server\api-gateway\src\domains\auth" />
       <recent name="C:\Users\Youcode\Desktop\Swap\server\auth-service\src\prisma" />
     </key>
@@ -114,12 +133,27 @@
       <workItem from="1766930799856" duration="4097000" />
       <workItem from="1766993227687" duration="10683000" />
       <workItem from="1767081427203" duration="15419000" />
-      <workItem from="1767254615392" duration="25046000" />
+      <workItem from="1767254615392" duration="28625000" />
+      <workItem from="1767618296262" duration="8737000" />
+      <workItem from="1767772046951" duration="19164000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+    <option name="exactExcludedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/payment-service/src/generated/prisma/client.d.ts" />
+        <option value="$PROJECT_DIR$/payment-service/src/generated/prisma/client.js" />
+      </list>
+    </option>
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="dependencySupport" implementationName="javascript:npm:kafkajs" />
+    <option featureType="dependencySupport" implementationName="javascript:npm:prettier" />
+    <option featureType="dependencySupport" implementationName="executable:docker" />
+    <option featureType="dependencySupport" implementationName="javascript:npm:prisma" />
+    <option featureType="dependencySupport" implementationName="executable:kubectl" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="SWAP-6:complet work in the crud role logic controller and service" />

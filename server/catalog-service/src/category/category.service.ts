@@ -1,9 +1,10 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { PrismaService } from '../prisma/prisma.service';
+import { CATEGORY_MESSAGES } from './constants/category.constants';
 
 @Injectable()
 export class CategoryService {
-  constructor(private prisma: PrismaService) {}
+  constructor(private prisma: PrismaService) { }
 
   async create(body: any) {
     const { name, description } = body;
@@ -12,7 +13,7 @@ export class CategoryService {
     });
     return {
       status: 201,
-      message: 'Category created successfully',
+      message: CATEGORY_MESSAGES.CATEGORY_CREATED,
       data: category,
     };
   }
@@ -25,7 +26,7 @@ export class CategoryService {
     const category = await this.prisma.category.findUnique({
       where: { id },
     });
-    if (!category) throw new NotFoundException('Category not found');
+    if (!category) throw new NotFoundException(CATEGORY_MESSAGES.CATEGORY_NOT_FOUND);
     return category;
   }
 
@@ -37,7 +38,7 @@ export class CategoryService {
     });
     return {
       status: 200,
-      message: 'Category updated successfully',
+      message: CATEGORY_MESSAGES.CATEGORY_UPDATED,
       data: category,
     };
   }
@@ -49,7 +50,7 @@ export class CategoryService {
     });
     return {
       status: 200,
-      message: 'Category deleted successfully',
+      message: CATEGORY_MESSAGES.CATEGORY_DELETED,
       data: category,
     };
   }

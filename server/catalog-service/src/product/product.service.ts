@@ -1,5 +1,6 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { PrismaService } from '../prisma/prisma.service';
+import { PRODUCT_MESSAGES } from './constants/product.constants';
 
 @Injectable()
 export class ProductService {
@@ -12,7 +13,7 @@ export class ProductService {
         });
         return {
             status: 201,
-            message: 'Product created successfully',
+            message: PRODUCT_MESSAGES.PRODUCT_CREATED,
             data: product,
         };
     }
@@ -28,7 +29,7 @@ export class ProductService {
             where: { id },
             include: { category: true, inventory: true },
         });
-        if (!product) throw new NotFoundException('Product not found');
+        if (!product) throw new NotFoundException(PRODUCT_MESSAGES.PRODUCT_NOT_FOUND);
         return product;
     }
 
@@ -41,7 +42,7 @@ export class ProductService {
         });
         return {
             status: 200,
-            message: 'Product updated successfully',
+            message: PRODUCT_MESSAGES.PRODUCT_UPDATED,
             data: product,
         };
     }
@@ -53,7 +54,7 @@ export class ProductService {
         });
         return {
             status: 200,
-            message: 'Product deleted successfully',
+            message: PRODUCT_MESSAGES.PRODUCT_DELETED,
             data: product,
         };
     }

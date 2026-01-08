@@ -8,7 +8,7 @@ import { InventoryModule } from './domains/catalog/inventory/inventory.module';
 import { ProductModule } from './domains/catalog/product/product.module';
 import { OrderModule } from './domains/order/order/order.module';
 import { OrderItemModule } from './domains/order/order-item/order-item.module';
-import { PaymentModule } from './domains/order/payment/payment.module';
+import { PaymentModule } from './domains/payment/payment.module';
 import { JwtStrategy } from './domains/auth/jwt.strategy';
 import { KafkaModule } from './kafka/kafka.module';
 
@@ -27,4 +27,4 @@ import { KafkaModule } from './kafka/kafka.module';
   controllers: [AppController],
   providers: [AppService, JwtStrategy],
 })
-export class AppModule { }
+export class AppModule {}

@@ -6,6 +6,7 @@ import {
 import { PrismaService } from '../prisma/prisma.service';
 import * as bcrypt from 'bcrypt';
 import { JwtService } from '@nestjs/jwt';
+import { AUTH_MESSAGES, JWT_CONFIG, ROLES } from './constants/auth.constants';
 
 interface RegisterData {
   firstName: string;
@@ -20,7 +21,7 @@ export class AuthService {
   constructor(
     private prisma: PrismaService,
     private jwtService: JwtService,
-  ) {}
+  ) { }
 
   async register(data: RegisterData) {
     const { firstName, lastName, email, password, phone } = data;
@@ -29,15 +30,15 @@ export class AuthService {
     });
 
     if (existingUser) {
-      throw new BadRequestException('User already exists');
+      throw new BadRequestException(AUTH_MESSAGES.USER_ALREADY_EXISTS);
     }
 
     const role = await this.prisma.role.findUnique({
-      where: { name: 'Client' },
+      where: { name: ROLES.CLIENT },
     });
 
     if (!role) {
-      throw new BadRequestException('Default role not found');
+      throw new BadRequestException(AUTH_MESSAGES.DEFAULT_ROLE_NOT_FOUND);
     }
 
     // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment,@typescript-eslint/no-unsafe-call,@typescript-eslint/no-unsafe-member-access
@@ -76,12 +77,12 @@ export class AuthService {
     });
 
     if (!user) {
-      throw new UnauthorizedException('Invalid credentials');
+      throw new UnauthorizedException(AUTH_MESSAGES.INVALID_CREDENTIALS);
     }
 
     const isValid = await bcrypt.compare(password, user.password);
     if (!isValid) {
-      throw new UnauthorizedException('Invalid credentials');
+      throw new UnauthorizedException(AUTH_MESSAGES.INVALID_CREDENTIALS);
     }
 
     const accessToken = this.jwtService.sign(
@@ -89,13 +90,13 @@ export class AuthService {
         id: user.id,
         email: user.email,
         role: user.role.name,
-      },
-      { expiresIn: '1d' },
+      } as any,
+      { expiresIn: JWT_CONFIG.ACCESS_TOKEN_EXPIRATION },
     );
 
     const refreshToken = this.jwtService.sign(
-      { sub: user.id },
-      { expiresIn: '7d' },
+      { sub: user.id } as any,
+      { expiresIn: JWT_CONFIG.REFRESH_TOKEN_EXPIRATION },
     );
 
     return {
