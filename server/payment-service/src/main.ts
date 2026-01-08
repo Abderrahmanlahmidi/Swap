@@ -3,7 +3,7 @@ import { AppModule } from './app.module';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
-  await app.listen(process.env.DATABASE_URL ?? 3004);
-  console.log(`Order service is running on: ${await app.getUrl()}`);
+  await app.listen(process.env.PORT ?? 3004);
+  console.log(`Payment service is running on: ${await app.getUrl()}`);
 }
 bootstrap();

@@ -1,9 +1,10 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { PrismaService } from '../prisma/prisma.service';
+import { INVENTORY_MESSAGES } from './constants/inventory.constants';
 
 @Injectable()
 export class InventoryService {
-  constructor(private prisma: PrismaService) {}
+  constructor(private prisma: PrismaService) { }
 
   async create(body: any) {
     const inventory = await this.prisma.inventory.create({
@@ -12,7 +13,7 @@ export class InventoryService {
     });
     return {
       status: 201,
-      message: 'Inventory record created successfully',
+      message: INVENTORY_MESSAGES.INVENTORY_CREATED,
       data: inventory,
     };
   }
@@ -28,7 +29,7 @@ export class InventoryService {
       where: { id },
       include: { product: true },
     });
-    if (!inventory) throw new NotFoundException('Inventory record not found');
+    if (!inventory) throw new NotFoundException(INVENTORY_MESSAGES.INVENTORY_NOT_FOUND);
     return inventory;
   }
 
@@ -41,7 +42,7 @@ export class InventoryService {
     });
     return {
       status: 200,
-      message: 'Inventory record updated successfully',
+      message: INVENTORY_MESSAGES.INVENTORY_UPDATED,
       data: inventory,
     };
   }
@@ -53,7 +54,7 @@ export class InventoryService {
     });
     return {
       status: 200,
-      message: 'Inventory record deleted successfully',
+      message: INVENTORY_MESSAGES.INVENTORY_DELETED,
       data: inventory,
     };
   }

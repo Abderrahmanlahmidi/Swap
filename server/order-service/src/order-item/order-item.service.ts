@@ -1,5 +1,6 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { PrismaService } from '../prisma/prisma.service';
+import { ORDER_ITEM_MESSAGES } from './constants/order-item.constants';
 
 @Injectable()
 export class OrderItemService {
@@ -11,7 +12,7 @@ export class OrderItemService {
         });
         return {
             status: 201,
-            message: 'Order item added successfully',
+            message: ORDER_ITEM_MESSAGES.ORDER_ITEM_CREATED,
             data: item,
         };
     }
@@ -29,7 +30,7 @@ export class OrderItemService {
         });
         return {
             status: 200,
-            message: 'Order item updated successfully',
+            message: ORDER_ITEM_MESSAGES.ORDER_ITEM_UPDATED,
             data: item,
         };
     }
@@ -40,7 +41,7 @@ export class OrderItemService {
         });
         return {
             status: 200,
-            message: 'Order item removed successfully',
+            message: ORDER_ITEM_MESSAGES.ORDER_ITEM_REMOVED,
             data: item,
         };
     }

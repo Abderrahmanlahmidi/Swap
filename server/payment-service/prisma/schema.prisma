@@ -5,9 +5,7 @@
 // Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
 
 generator client {
-  provider     = "prisma-client"
-  output       = "../src/generated/prisma"
-  moduleFormat = "cjs"
+  provider     = "prisma-client-js"
 }
 
 datasource db {
@@ -15,18 +13,20 @@ datasource db {
 }
 
 model Payment {
-  id      String         @id @default(uuid())
-  orderId String?
-  amount  Float?
-  method  String?
-  status  PaymentStatus?
+  id                    String        @id @default(uuid())
+  orderId               String
+  amount                Float
+  currency              String
+  method                String
+  status                PaymentStatus @default(PENDING)
+  stripePaymentIntentId String?
 
-  createdAt DateTime? @default(now())
-  updatedAt DateTime? @updatedAt
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }
 
 enum PaymentStatus {
-  Pending
-  Success
-  Failed
+  PENDING
+  SUCCESS
+  FAILED
 }
