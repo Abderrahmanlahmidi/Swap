@@ -4,41 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4b466510-e57d-4e0f-9ce7-eddab30fe38f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/payment-service/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/payment-service/.prettierrc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/payment-service/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/payment-service/eslint.config.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/payment-service/nest-cli.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/payment-service/prisma.config.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/payment-service/prisma/migrations/20260105151233_init/migration.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/payment-service/prisma/migrations/migration_lock.toml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/payment-service/src/app.controller.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/payment-service/src/app.controller.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/payment-service/src/app.service.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/payment-service/test/app.e2e-spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/payment-service/test/jest-e2e.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/payment-service/tsconfig.build.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/payment-service/tsconfig.json" afterDir="false" />
+    <list default="true" id="a971e83d-4645-430a-b75e-840fe899ae41" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/ec8734b3-6f08-4e34-be03-fb70c39b401f.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/ec8734b3-6f08-4e34-be03-fb70c39b401f/storage_v2/_src_/database/auth_db.ddJ22Q.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/ec8734b3-6f08-4e34-be03-fb70c39b401f/storage_v2/_src_/database/auth_db.ddJ22Q/schema/public.abK9xQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/ec8734b3-6f08-4e34-be03-fb70c39b401f/storage_v2/_src_/database/swap_catalog.bdWPxg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/ec8734b3-6f08-4e34-be03-fb70c39b401f/storage_v2/_src_/database/swap_catalog.bdWPxg/schema/public.abK9xQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/ec8734b3-6f08-4e34-be03-fb70c39b401f/storage_v2/_src_/database/swap_order.okFH0g.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/ec8734b3-6f08-4e34-be03-fb70c39b401f/storage_v2/_src_/database/swap_order.okFH0g/schema/public.abK9xQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/ec8734b3-6f08-4e34-be03-fb70c39b401f/storage_v2/_src_/database/swap_payment.WqeMdg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/ec8734b3-6f08-4e34-be03-fb70c39b401f/storage_v2/_src_/database/swap_payment.WqeMdg/schema/public.abK9xQ.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-gateway/src/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-gateway/src/domains/auth/auth.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/domains/auth/auth.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-gateway/src/domains/catalog/product/product.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/domains/catalog/product/product.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-gateway/src/domains/payment/dto/create-payment.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/domains/payment/dto/create-payment.dto.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-gateway/src/domains/payment/payment.controller.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/domains/payment/payment.controller.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-gateway/src/domains/payment/payment.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/domains/payment/payment.controller.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-gateway/src/domains/payment/payment.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/domains/payment/payment.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-gateway/src/domains/payment/payment.service.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/domains/payment/payment.service.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/src/domains/order/order/order.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/domains/order/order/order.controller.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api-gateway/src/domains/payment/payment.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/domains/payment/payment.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth-service/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth-service/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth-service/src/auth/auth.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/auth/auth.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth-service/src/role/role.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/role/role.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/catalog-service/src/category/category.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/catalog-service/src/category/category.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/catalog-service/src/inventory/inventory.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/catalog-service/src/inventory/inventory.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/catalog-service/src/product/product.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/catalog-service/src/product/product.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order-service/src/order-item/order-item.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/src/order-item/order-item.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order-service/src/order/order.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/src/order/order.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-service/prisma/schema.prisma" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/prisma/schema.prisma" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/payment-service/src/payment/payment.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/payment-service/src/payment/payment.service.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -46,75 +25,43 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="TypeScript File" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/payment-service" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="GitHubPullRequestSearchHistory">{
-  &quot;lastFilter&quot;: {
-    &quot;state&quot;: &quot;OPEN&quot;,
-    &quot;assignee&quot;: &quot;Abderrahmanlahmidi&quot;
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "Abderrahmanlahmidi"
   }
-}</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/Abderrahmanlahmidi/Swap.git&quot;,
-    &quot;accountId&quot;: &quot;c396f7d8-a381-4085-b4cb-b4f872fe0cc4&quot;
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/Abderrahmanlahmidi/Swap.git",
+    "accountId": "c396f7d8-a381-4085-b4cb-b4f872fe0cc4"
   }
-}</component>
-  <component name="ProblemsViewState">
-    <option name="selectedTabId" value="ProjectErrors" />
-  </component>
-  <component name="ProjectColorInfo">{
-  &quot;customColor&quot;: &quot;&quot;,
-  &quot;associatedIndex&quot;: 8
-}</component>
-  <component name="ProjectId" id="37KOMVfeB0ZpLjpyXHahVeHQWck" />
-  <component name="ProjectLevelVcsManager">
-    <ConfirmationsSetting value="2" id="Add" />
-  </component>
+}]]></component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "customColor": "",
+  "associatedIndex": 8
+}]]></component>
+  <component name="ProjectId" id="38HdIiQK4e6Q48S6zTE2cT4mhVm" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_MARK_IGNORED_FILES_AS_EXCLUDED&quot;: &quot;true&quot;,
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;Node.js.auth.service.ts.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;services&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;C:\\Users\\Youcode\\Desktop\\Swap\\server\\auth-service\\node_modules\\prettier&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\Youcode\\Desktop\\Swap\\server\\auth-service\\node_modules\\typescript\\lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
-  },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;postgresql&quot;
-    ]
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "services",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
-  <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Youcode\Desktop\Swap\server\api-gateway\src\domains" />
-      <recent name="C:\Users\Youcode\Desktop\Swap\server\api-gateway\src\domains\auth" />
-      <recent name="C:\Users\Youcode\Desktop\Swap\server\auth-service\src\prisma" />
-    </key>
-  </component>
+}]]></component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -124,39 +71,16 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="4b466510-e57d-4e0f-9ce7-eddab30fe38f" name="Changes" comment="" />
-      <created>1766648251263</created>
+      <changelist id="a971e83d-4645-430a-b75e-840fe899ae41" name="Changes" comment="" />
+      <created>1768460354073</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1766648251263</updated>
-      <workItem from="1766648253457" duration="47221000" />
-      <workItem from="1766930799856" duration="4097000" />
-      <workItem from="1766993227687" duration="10683000" />
-      <workItem from="1767081427203" duration="15419000" />
-      <workItem from="1767254615392" duration="28625000" />
-      <workItem from="1767618296262" duration="8737000" />
-      <workItem from="1767772046951" duration="19164000" />
+      <updated>1768460354073</updated>
+      <workItem from="1768460355925" duration="1123000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-    <option name="exactExcludedFiles">
-      <list>
-        <option value="$PROJECT_DIR$/payment-service/src/generated/prisma/client.d.ts" />
-        <option value="$PROJECT_DIR$/payment-service/src/generated/prisma/client.js" />
-      </list>
-    </option>
-  </component>
-  <component name="UnknownFeatures">
-    <option featureType="dependencySupport" implementationName="javascript:npm:kafkajs" />
-    <option featureType="dependencySupport" implementationName="javascript:npm:prettier" />
-    <option featureType="dependencySupport" implementationName="executable:docker" />
-    <option featureType="dependencySupport" implementationName="javascript:npm:prisma" />
-    <option featureType="dependencySupport" implementationName="executable:kubectl" />
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="SWAP-6:complet work in the crud role logic controller and service" />
-    <option name="LAST_COMMIT_MESSAGE" value="" />
   </component>
 </project>
