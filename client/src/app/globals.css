@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic');
+@import "tailwindcss";
+
+body {
+  font-family: "Poppins", var(--font-poppins), sans-serif;
+  color: var(--color-neutral-900);
+  background-color: #ffffff;
+}
+
+@theme {
+  --font-sans: "Poppins", var(--font-poppins), sans-serif;
+
+  --color-primary: #171717;
+
+  --color-primary-hover: #262626;
+
+
+  --color-secondary: #525252;
+
+  --color-secondary-hover: #171717;
+
+  --color-success: #15803d;
+
+  --color-success-hover: #14532d;
+
+  --color-danger: #b91c1c;
+
+  --color-danger-hover: #7f1d1d;
+
+  --color-warning: #a16207;
+
+  --color-warning-hover: #713f12;
+
+  --color-info: #404040;
+
+  --color-info-hover: #171717;
+
+
+  --color-neutral-50: #fafafa;
+  --color-neutral-100: #f5f5f5;
+  --color-neutral-200: #e5e5e5;
+
+  --color-neutral-300: #d4d4d4;
+  --color-neutral-400: #a3a3a3;
+  --color-neutral-500: #737373;
+
+  --color-neutral-600: #525252;
+  --color-neutral-700: #404040;
+  --color-neutral-800: #262626;
+  --color-neutral-900: #171717;
+
+}

@@ -18,7 +18,6 @@ export class PaymentService implements OnModuleInit {
   private baseUrl = process.env.PAYMENT_SERVICE_URL;
 
   async processPayment(dto: CreatePaymentDto) {
-    // Process via Kafka as per service implementation
     this.kafkaClient.emit('order.created', dto);
     return { message: 'Payment processing initiated' };
   }

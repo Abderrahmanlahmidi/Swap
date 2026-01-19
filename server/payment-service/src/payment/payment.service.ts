@@ -25,7 +25,6 @@ export class PaymentService {
         apiVersion: STRIPE_CONFIG.API_VERSION as any,
       },
     );
-    swap_payment;
   }
 
   async processPayment(data: {
