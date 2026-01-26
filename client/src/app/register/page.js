@@ -6,6 +6,10 @@ import * as z from 'zod';
 import { Mail, Lock, User, Phone, ArrowRight, Loader2, ShoppingBag } from 'lucide-react';
 import Link from 'next/link';
 import FormInput from '../components/ui/FormInput';
+import { useAuth } from '@/hooks/useAuth';
+import { useRouter } from 'next/navigation';
+import { useState } from 'react';
+
 
 
 const registerSchema = z.object({
@@ -16,7 +20,7 @@ const registerSchema = z.object({
     password: z.string().min(6, { message: "Password must be at least 6 characters" }),
 });
 
-export default function RegisterPage() { 
+export default function RegisterPage() {
     const {
         register,
         handleSubmit,
@@ -25,10 +29,21 @@ export default function RegisterPage() {
         resolver: zodResolver(registerSchema),
     });
 
+    const { register: registerUser } = useAuth();
+    const router = useRouter();
+    const [authError, setAuthError] = useState('');
+
+
     const onSubmit = async (data) => {
-        console.log(data);
-        await new Promise((resolve) => setTimeout(resolve, 2000));
+        try {
+            setAuthError('');
+            await registerUser(data);
+            router.push('/login');
+        } catch (err) {
+            setAuthError(err.response?.data?.message || 'Registration failed.');
+        }
     };
+
 
     return (
         <div className="min-h-screen w-full flex">
@@ -53,6 +68,13 @@ export default function RegisterPage() {
                             Join us to simplify your shopping experience.
                         </p>
                     </div>
+
+                    {authError && (
+                        <div className="p-4 rounded-xl bg-rose-500/10 border border-rose-500/20 text-rose-500 text-sm font-medium text-center">
+                            {authError}
+                        </div>
+                    )}
+
 
                     <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">

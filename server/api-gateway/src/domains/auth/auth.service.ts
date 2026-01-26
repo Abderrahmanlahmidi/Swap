@@ -49,14 +49,14 @@ export class AuthService {
     return res.data;
   }
 
-  async updateRole(id: number, dto: UpdateRoleDto) {
+  async updateRole(id: string, dto: UpdateRoleDto) {
     const res = await firstValueFrom(
       this.http.patch(`${process.env.AUTH_SERVICE_URL}${AUTH_ENDPOINTS.ROLES}/${id}`, dto),
     );
     return res.data;
   }
 
-  async deleteRole(id: number) {
+  async deleteRole(id: string) {
     const res = await firstValueFrom(
       this.http.delete(`${process.env.AUTH_SERVICE_URL}${AUTH_ENDPOINTS.ROLES}/${id}`),
     );

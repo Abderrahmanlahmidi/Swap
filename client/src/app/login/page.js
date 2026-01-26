@@ -6,6 +6,10 @@ import * as z from 'zod';
 import { Mail, Lock, ArrowRight, Loader2, ShoppingBag } from 'lucide-react';
 import Link from 'next/link';
 import FormInput from '../components/ui/FormInput';
+import { useAuth } from '@/hooks/useAuth';
+import { useRouter } from 'next/navigation';
+import { useState } from 'react';
+
 
 const loginSchema = z.object({
     email: z.string().email({ message: "Invalid email address" }),
@@ -21,10 +25,21 @@ export default function LoginPage() {
         resolver: zodResolver(loginSchema),
     });
 
+    const { login } = useAuth();
+    const router = useRouter();
+    const [authError, setAuthError] = useState('');
+
+
     const onSubmit = async (data) => {
-        console.log(data);
-        await new Promise((resolve) => setTimeout(resolve, 2000));
+        try {
+            setAuthError('');
+            await login(data);
+            router.push('/');
+        } catch (err) {
+            setAuthError(err.response?.data?.message || 'Login failed. Please check your credentials.');
+        }
     };
+
 
     return (
         <div className="min-h-screen w-full flex">
@@ -49,6 +64,13 @@ export default function LoginPage() {
                             Enter your credentials to access your account.
                         </p>
                     </div>
+
+                    {authError && (
+                        <div className="p-4 rounded-xl bg-rose-500/10 border border-rose-500/20 text-rose-500 text-sm font-medium text-center">
+                            {authError}
+                        </div>
+                    )}
+
 
                     <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
                         <div className="space-y-4">

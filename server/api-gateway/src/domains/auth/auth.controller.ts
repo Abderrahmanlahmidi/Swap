@@ -19,7 +19,7 @@ import { UserRole } from '../../enums/user-role.enum';
 
 @Controller('auth')
 export class AuthController {
-  constructor(private readonly authService: AuthService) {}
+  constructor(private readonly authService: AuthService) { }
 
   @Post('login')
   login(@Body() body: LoginDto) {
@@ -44,12 +44,12 @@ export class AuthController {
   }
 
   @Patch('roles/:id')
-  updateRole(@Param('id') id: number, @Body() dto: UpdateRoleDto) {
+  updateRole(@Param('id') id: string, @Body() dto: UpdateRoleDto) {
     return this.authService.updateRole(id, dto);
   }
 
   @Delete('roles/:id')
-  deleteRole(@Param('id') id: number) {
+  deleteRole(@Param('id') id: string) {
     return this.authService.deleteRole(id);
   }
 }
