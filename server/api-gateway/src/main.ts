@@ -1,3 +1,4 @@
+import 'dotenv/config';
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import { ValidationPipe } from '@nestjs/common';
@@ -12,8 +13,12 @@ async function bootstrap() {
       transform: true,
     }),
   );
-  await app.listen(process.env.PORT ?? 3000);
-  console.log(`API Gateway is running on: ${await app.getUrl()}`);
+  app.enableCors({
+    origin: 'http://localhost:3000',
+    credentials: true,
+  });
+  await app.listen(process.env.PORT ?? 3001, '0.0.0.0');
+  console.log(`API Gateway is running on: http://localhost:${process.env.PORT ?? 3001}`);
 }
 
 bootstrap()

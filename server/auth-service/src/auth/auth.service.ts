@@ -16,6 +16,14 @@ interface RegisterData {
   phone: string;
 }
 
+interface UpdateProfileData {
+  firstName?: string;
+  lastName?: string;
+  phone?: string;
+  image?: string;
+}
+
+
 @Injectable()
 export class AuthService {
   constructor(
@@ -106,4 +114,42 @@ export class AuthService {
       refreshToken,
     };
   }
+
+  async getMe(userId: string) {
+    const user = await this.prisma.user.findUnique({
+      where: { id: userId },
+      include: { role: true },
+    });
+    if (!user) throw new UnauthorizedException(AUTH_MESSAGES.INVALID_CREDENTIALS);
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    const { password, ...result } = user;
+    return result;
+  }
+
+  async updateProfile(userId: string, data: UpdateProfileData) {
+    const user = await this.prisma.user.update({
+      where: { id: userId },
+      data,
+      include: { role: true },
+    });
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    const { password, ...result } = user;
+    return result;
+  }
+
+  async changePassword(userId: string, oldPass: string, newPass: string) {
+    const user = await this.prisma.user.findUnique({ where: { id: userId } });
+    if (!user) throw new UnauthorizedException(AUTH_MESSAGES.INVALID_CREDENTIALS);
+
+    const isValid = await bcrypt.compare(oldPass, user.password);
+    if (!isValid) throw new BadRequestException('Current password does not match');
+
+    const hashedPassword = await bcrypt.hash(newPass, 12);
+    await this.prisma.user.update({
+      where: { id: userId },
+      data: { password: hashedPassword },
+    });
+    return { message: 'Password updated successfully' };
+  }
 }
+

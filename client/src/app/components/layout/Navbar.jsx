@@ -1,7 +1,4 @@
-"use client"
-import React, { useState, useEffect, useRef } from 'react';
-import Link from 'next/link'
-import { usePathname, useRouter } from 'next/navigation';
+"use client";
 import {
   ShoppingBag,
   Search,
@@ -11,19 +8,40 @@ import {
   X,
   ShoppingCart,
   LogOut,
-  ChevronRight
+  ChevronRight,
+  Settings
 } from 'lucide-react';
 import { categories, accountMenu } from '../../constants/navbar.constants';
+import { useSelector, useDispatch } from 'react-redux';
+import { useAuth } from '@/hooks/useAuth';
+import { initializeAuth } from '@/lib/redux/authSlice';
+
+import React, { useState, useEffect, useRef } from 'react';
+import Link from 'next/link';
+import { usePathname, useRouter } from 'next/navigation';
+import UserDropdown from './UserDropdown';
+
+
+
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isAccountOpen, setIsAccountOpen] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const { isAuthenticated, user, isInitialized } = useSelector((state) => state.auth);
+  const { logout } = useAuth();
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    setIsMounted(true);
+    dispatch(initializeAuth());
+  }, [dispatch]);
+
+
+
+
   const pathname = usePathname();
   const isHome = pathname === '/';
-
-  const accountDropdownRef = useRef(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -33,15 +51,6 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (accountDropdownRef.current && !accountDropdownRef.current.contains(event.target)) {
-        setIsAccountOpen(false);
-      }
-    };
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, []);
 
   const navBackground = isHome && !isScrolled
     ? 'bg-transparent border-transparent'
@@ -71,10 +80,11 @@ export default function Navbar() {
   };
 
   const handleLogout = () => {
-    setIsAuthenticated(false);
+    logout();
     setIsAccountOpen(false);
-    console.log('Logout clicked');
+    router.push('/');
   };
+
 
   const handleRegister = () => {
     router.push('/register');
@@ -139,39 +149,19 @@ export default function Navbar() {
             </button>
 
             {/* Authentication Section */}
-            {isAuthenticated ? (
-              <div className="relative hidden md:block" ref={accountDropdownRef}>
-                <button
-                  onClick={() => setIsAccountOpen(!isAccountOpen)}
-                  className={`flex items-center gap-1 ${iconColor} hover:opacity-70 transition-colors p-1`}
-                >
-                  <User className="w-5 h-5" strokeWidth={1.5} />
-                </button>
+            {(!isMounted || !isInitialized) ? (
+              <div className="hidden md:flex items-center gap-4">
+                <div className="w-20 h-8 bg-neutral-800 animate-pulse rounded-sm"></div>
+                <div className="w-24 h-8 bg-neutral-800 animate-pulse rounded-sm"></div>
+              </div>
+            ) : isAuthenticated ? (
 
-                {/* Dropdown Menu - Keep white for contrast */}
-                <div className={`absolute right-0 mt-4 w-48 bg-white border border-neutral-200 shadow-xl rounded-sm py-2 transition-all duration-200 origin-top-right ${isAccountOpen ? 'opacity-100 scale-100' : 'opacity-0 scale-95 pointer-events-none'}`}>
-                  {accountMenu.map((item) => (
-                    <Link
-                      key={item.name}
-                      href={item.href}
-                      className="flex items-center gap-3 px-4 py-2 text-sm text-neutral-600 hover:bg-neutral-50 hover:text-neutral-900 transition-colors"
-                      onClick={() => setIsAccountOpen(false)}
-                    >
-                      {item.icon && <item.icon className="w-4 h-4" />}
-                      {item.name}
-                    </Link>
-                  ))}
-                  <div className="border-t border-neutral-200 my-2"></div>
-                  <button
-                    onClick={handleLogout}
-                    className="flex items-center gap-3 px-4 py-2 text-sm text-neutral-600 hover:bg-neutral-50 hover:text-neutral-900 transition-colors w-full text-left"
-                  >
-                    <LogOut className="w-4 h-4" />
-                    Sign Out
-                  </button>
-                </div>
+              <div className="hidden md:block">
+                <UserDropdown user={user} logout={handleLogout} iconColor={iconColor} />
               </div>
             ) : (
+
+
               <div className="hidden md:flex items-center gap-4">
                 <button
                   onClick={handleLogin}
@@ -254,7 +244,14 @@ export default function Navbar() {
           <div className="pt-6">
             <p className="text-xs font-bold text-neutral-400 uppercase tracking-widest mb-4">Account</p>
 
-            {isAuthenticated ? (
+            {(!isMounted || !isInitialized) ? (
+              <div className="flex flex-col gap-3">
+                <div className="w-full h-12 bg-neutral-800 animate-pulse rounded-sm"></div>
+                <div className="w-full h-12 bg-neutral-800 animate-pulse rounded-sm"></div>
+              </div>
+            ) : isAuthenticated ? (
+
+
               // Mobile logged in view
               <div className="space-y-3">
                 {accountMenu.map((item) => (
@@ -273,13 +270,14 @@ export default function Navbar() {
                     handleLogout();
                     closeMobileMenu();
                   }}
-                  className="flex items-center gap-3 text-neutral-300 hover:text-white py-2 transition-colors w-full text-left"
+                  className="flex items-center gap-3 text-rose-400 hover:text-rose-300 py-2 transition-colors w-full text-left"
                 >
                   <LogOut className="w-4 h-4" />
                   Sign Out
                 </button>
               </div>
             ) : (
+
               // Mobile not logged in view
               <div className="flex flex-col gap-3">
                 <button

@@ -1,5 +1,7 @@
 import { Poppins } from "next/font/google";
 import "./globals.css";
+import { Suspense } from "react";
+import Loading from "./components/layout/Loading";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -12,12 +14,19 @@ export const metadata = {
   description: "E-Commerce Website",
 };
 
+import Providers from "./providers";
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${poppins.variable} font-sans antialiased`}>
-        {children}
+      <body className={`${poppins.variable} font-sans antialiased text-white bg-neutral-950`}>
+        <Providers>
+          <Suspense fallback={<Loading />}>
+            {children}
+          </Suspense>
+        </Providers>
       </body>
     </html>
   );
 }
+

@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import { Eye, EyeOff } from "lucide-react";
 
@@ -27,13 +28,11 @@ const FormInput = React.forwardRef(
             type={isPassword ? (showPassword ? "text" : "password") : type}
             ref={ref}
             placeholder={placeholder}
-            className={`w-full ${Icon ? "pl-10" : "pl-4"} ${
-              isPassword ? "pr-10" : "pr-4"
-            } py-3 bg-neutral-50 dark:bg-neutral-900 border rounded-xl focus:ring-2 focus:ring-neutral-900 dark:focus:ring-white outline-none transition-all placeholder:text-neutral-400 dark:placeholder:text-neutral-500 text-neutral-900 dark:text-white ${
-              error
+            className={`w-full ${Icon ? "pl-10" : "pl-4"} ${isPassword ? "pr-10" : "pr-4"
+              } py-3 bg-neutral-50 dark:bg-neutral-900 border rounded-xl focus:ring-2 focus:ring-neutral-900 dark:focus:ring-white outline-none transition-all placeholder:text-neutral-400 dark:placeholder:text-neutral-500 text-neutral-900 dark:text-white ${error
                 ? "border-red-500"
                 : "border-neutral-200 dark:border-neutral-800"
-            }`}
+              }`}
             {...props}
           />
           {isPassword && (
